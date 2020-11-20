@@ -2,26 +2,24 @@
 class PomeriumCli < Formula
   desc ""
   homepage ""
-  version "0.11.0-rc1"
+  version "0.11.0-rc2"
   bottle :unneeded
 
   if OS.mac?
-    url "https://github.com/pomerium/pomerium/releases/download/v0.11.0-rc1/pomerium-cli-darwin-amd64.tar.gz"
-    sha256 "9c5a0c90269607d5c3408e4db4a99f9fd33ea7d9fde36ecf4951b2a80fe63804"
-  elsif OS.linux?
-    if Hardware::CPU.intel?
-      url "https://github.com/pomerium/pomerium/releases/download/v0.11.0-rc1/pomerium-cli-linux-amd64.tar.gz"
-      sha256 "887002ac01ca728cbd7e0f2538448621836cf6aa152ea7b861074dfd65d0f86a"
-    end
-    if Hardware::CPU.arm?
-      if Hardware::CPU.is_64_bit?
-        url "https://github.com/pomerium/pomerium/releases/download/v0.11.0-rc1/pomerium-cli-linux-arm64.tar.gz"
-        sha256 "00daa518ef8084cd60e1e75e8924af1295f12167a6e0198fbd1b998f18546b60"
-      else
-        url "https://github.com/pomerium/pomerium/releases/download/v0.11.0-rc1/pomerium-cli-linux-armv6.tar.gz"
-        sha256 "9d0a1e60960d555dbcfef9a24935230047fc69abeb6577a801663bd7d06b7614"
-      end
-    end
+    url "https://github.com/pomerium/pomerium/releases/download/v0.11.0-rc2/pomerium-cli-darwin-amd64.tar.gz"
+    sha256 "0848c57ec9eedec6a61344c803b14a14ca7b6537b4713ed1ce4bc5561ba65951"
+  end
+  if OS.linux? && Hardware::CPU.intel?
+    url "https://github.com/pomerium/pomerium/releases/download/v0.11.0-rc2/pomerium-cli-linux-amd64.tar.gz"
+    sha256 "02055efe4f33499190a0c8260cf46912f0a349ab23f0ef582f39634997f64274"
+  end
+  if OS.linux? && Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
+    url "https://github.com/pomerium/pomerium/releases/download/v0.11.0-rc2/pomerium-cli-linux-armv6.tar.gz"
+    sha256 "8ca70ab0dfb51ad09355ad06d211185d26b3712bc3952824d5663454f1b1731f"
+  end
+  if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+    url "https://github.com/pomerium/pomerium/releases/download/v0.11.0-rc2/pomerium-cli-linux-arm64.tar.gz"
+    sha256 "4401a55b10f07927a695071704bf2a364c1d2642871502876509351f35c5f6f3"
   end
 
   def install
