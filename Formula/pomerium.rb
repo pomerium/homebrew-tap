@@ -2,20 +2,20 @@
 class Pomerium < Formula
   desc ""
   homepage ""
-  version "0.11.0-rc2"
+  version "0.11.0"
   bottle :unneeded
 
   if OS.mac?
-    url "https://github.com/pomerium/pomerium/releases/download/v0.11.0-rc2/pomerium-darwin-amd64.tar.gz"
-    sha256 "0e6d2b974dc98208316aa7c17bce4612f515935b144ef1ce3f6f3db6bba08cb4"
+    url "https://github.com/pomerium/pomerium/releases/download/v0.11.0/pomerium-darwin-amd64.tar.gz"
+    sha256 "53d4e63dc22eab7a662f2424f61bf1d0d5a189d73154823a7335a9f666a70f7f"
   end
   if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/pomerium/pomerium/releases/download/v0.11.0-rc2/pomerium-linux-amd64.tar.gz"
-    sha256 "9604a685d64ebb3a4f9223cc0161c65e5598e5a215ce098f07550cc7a7296a19"
+    url "https://github.com/pomerium/pomerium/releases/download/v0.11.0/pomerium-linux-amd64.tar.gz"
+    sha256 "80aac835e9c8806a973f2666d85b12d65e9b4d0c86faa2ff2c628092db384a94"
   end
   if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-    url "https://github.com/pomerium/pomerium/releases/download/v0.11.0-rc2/pomerium-linux-arm64.tar.gz"
-    sha256 "c9b63fac1c09c4388fa705e14559b65dc076ba8e1f877291dacf5bacaf588100"
+    url "https://github.com/pomerium/pomerium/releases/download/v0.11.0/pomerium-linux-arm64.tar.gz"
+    sha256 "f28ed4e56527ec998bc4f2170b5d069cb4b471b1f3cda3656bfbd2cc15328b64"
   end
 
   def install
