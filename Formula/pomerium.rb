@@ -10,15 +10,15 @@ class Pomerium < Formula
 
   if OS.mac?
     url "https://github.com/pomerium/pomerium/releases/download/v0.12.2/pomerium-darwin-amd64.tar.gz"
-    sha256 "95b46b6ae4e4693c892305285cbd7c1a2463db69d0a63b3a498badd06c5fd289"
+    sha256 "45f70948a5f2c313808288873b1fcd8a5d90112dec09aea3c73fda8e52f0eb63"
   end
   if OS.linux? && Hardware::CPU.intel?
     url "https://github.com/pomerium/pomerium/releases/download/v0.12.2/pomerium-linux-amd64.tar.gz"
-    sha256 "ec00451a07adc8a00d1a7200762e5bdba8c54103625e1f6807a9a11d5341c5f3"
+    sha256 "1b7f3bda31754e81baef2efa39ffac531406dc7f09e6c09300b53313dd1aa919"
   end
   if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
     url "https://github.com/pomerium/pomerium/releases/download/v0.12.2/pomerium-linux-arm64.tar.gz"
-    sha256 "860c7fe47144d8bd53c76694a01fab503bcee77da4ff1bd297253d69ae2fcb27"
+    sha256 "f8007e3a617d7bdbd7f93c31cd3226f8ab3149b741cd3e1d14d2b98408af5ff1"
   end
 
   def install
