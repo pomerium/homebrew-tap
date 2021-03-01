@@ -5,24 +5,24 @@
 class PomeriumCli < Formula
   desc ""
   homepage ""
-  version "0.13.1"
+  version "0.13.2"
   bottle :unneeded
 
   if OS.mac?
-    url "https://github.com/pomerium/pomerium/releases/download/v0.13.1/pomerium-cli-darwin-amd64.tar.gz"
-    sha256 "6ef976b259aca34fa6f68e84bd6947df9663ebf11073e4a3056381c931858559"
+    url "https://github.com/pomerium/pomerium/releases/download/v0.13.2/pomerium-cli-darwin-amd64.tar.gz"
+    sha256 "739d60da9f7542c4efc5ba52c0f96d48c28e59cbc45aef524afc8bf1fcb7e80d"
   end
   if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/pomerium/pomerium/releases/download/v0.13.1/pomerium-cli-linux-amd64.tar.gz"
-    sha256 "31e26a612faeec741f465fdb168c4e3262709ad0bae469651ea8430b907acf99"
+    url "https://github.com/pomerium/pomerium/releases/download/v0.13.2/pomerium-cli-linux-amd64.tar.gz"
+    sha256 "7fbd411bfb140401af88c78e9c17744d4a808421ea2260a5b996ff6ad82a6559"
   end
   if OS.linux? && Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-    url "https://github.com/pomerium/pomerium/releases/download/v0.13.1/pomerium-cli-linux-armv6.tar.gz"
-    sha256 "6e826a2e4bd8cd90325cd3852c55e9c70c67d1ff5826bbd67117cf374df1fd3a"
+    url "https://github.com/pomerium/pomerium/releases/download/v0.13.2/pomerium-cli-linux-armv6.tar.gz"
+    sha256 "fa093110dc01d308d431aaf386aadc885b4d951b6d93031b1ef7ad37d8c4754f"
   end
   if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-    url "https://github.com/pomerium/pomerium/releases/download/v0.13.1/pomerium-cli-linux-arm64.tar.gz"
-    sha256 "cb2f2cbf4b47d05ca6610c1dfbc9a9f3918c90f5b7f68cc44133f6cf89da2934"
+    url "https://github.com/pomerium/pomerium/releases/download/v0.13.2/pomerium-cli-linux-arm64.tar.gz"
+    sha256 "52fc938aa2d8e78333568caf58ed269baa5351f55a6167ab0df3e2f9d31f20cc"
   end
 
   def install
