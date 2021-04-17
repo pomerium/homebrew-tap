@@ -11,11 +11,11 @@ class Pomerium < Formula
 
   if OS.linux? && Hardware::CPU.intel?
     url "https://github.com/pomerium/pomerium/releases/download/v0.13.6/pomerium-linux-amd64.tar.gz"
-    sha256 "c0fcb88a33ff528f29929aa24262f511ea573fb9cf8e5e03f54dc9ccc94db14e"
+    sha256 "7ed74c0ccd292422b9f537bc44f94b73107583e743ad7b85a00234d2e9deb770"
   end
   if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
     url "https://github.com/pomerium/pomerium/releases/download/v0.13.6/pomerium-linux-arm64.tar.gz"
-    sha256 "edc4f5318873bb80e59963700f5ca34532a44698527d57abc56469ae481d08c7"
+    sha256 "c6b3d5bfe4d48d25eeee271864d0619820bde93f1730e27a68e1e68b0dd6041a"
   end
 
   def install
