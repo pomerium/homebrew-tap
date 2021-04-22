@@ -5,28 +5,24 @@
 class PomeriumCli < Formula
   desc ""
   homepage ""
-  version "0.13.6"
+  version "0.14.0-rc1"
   bottle :unneeded
 
-  if OS.mac? && Hardware::CPU.intel?
-    url "https://github.com/pomerium/pomerium/releases/download/v0.13.6/pomerium-cli-darwin-amd64.tar.gz"
-    sha256 "5d8628f4320600e1a5ba53530f7b6929e4fd80323e4ac035686506ec48972913"
-  end
-  if OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/pomerium/pomerium/releases/download/v0.13.6/pomerium-cli-darwin-arm64.tar.gz"
-    sha256 "1be3ab47004503bd4f7f2f6426ac44c9b9022690a06c2b32d2678ed9f6440807"
+  if OS.mac?
+    url "https://github.com/pomerium/pomerium/releases/download/v0.14.0-rc1/pomerium-cli-darwin-amd64.tar.gz"
+    sha256 "285aa4fc1a23cf3ef3e9889e43dc071d178418c7eda5bf5bf73675231dc6162b"
   end
   if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/pomerium/pomerium/releases/download/v0.13.6/pomerium-cli-linux-amd64.tar.gz"
-    sha256 "ae8ee2173c6b205a1085eeb97f4c57615f10fa756a7caf4407b9843d844657d9"
+    url "https://github.com/pomerium/pomerium/releases/download/v0.14.0-rc1/pomerium-cli-linux-amd64.tar.gz"
+    sha256 "956f87908160a3defa19371f7933858e12938790f8b906371fe7f0acd56c6af0"
   end
   if OS.linux? && Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-    url "https://github.com/pomerium/pomerium/releases/download/v0.13.6/pomerium-cli-linux-armv6.tar.gz"
-    sha256 "d362658396fdaa45bc1fa4224dd2aa14eee33209800486ca88690d0924f6343e"
+    url "https://github.com/pomerium/pomerium/releases/download/v0.14.0-rc1/pomerium-cli-linux-armv6.tar.gz"
+    sha256 "5f8ddc02fde71a990d07c136bc34ac4adefafc92322cc7081b881b3de5661351"
   end
   if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-    url "https://github.com/pomerium/pomerium/releases/download/v0.13.6/pomerium-cli-linux-arm64.tar.gz"
-    sha256 "5a1390076973d2ad9dc4272c240f492c1bc82fbfe8ef6a1fe63f999cfe530aff"
+    url "https://github.com/pomerium/pomerium/releases/download/v0.14.0-rc1/pomerium-cli-linux-arm64.tar.gz"
+    sha256 "be455054140872e612c5cdc97e548df739023bfb6ba947b7705b0047562a3d2c"
   end
 
   def install
