@@ -5,28 +5,32 @@
 class PomeriumCli < Formula
   desc ""
   homepage ""
-  version "0.15.6"
+  version "0.15.7"
   bottle :unneeded
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/pomerium/pomerium/releases/download/v0.15.6/pomerium-cli-darwin-amd64.tar.gz"
-      sha256 "ca185696d5d73c669ef2d14a3e190918c86e20e90fb2dc49a35b4b0ff8e8758c"
+      url "https://github.com/pomerium/pomerium/releases/download/v0.15.7/pomerium-cli-darwin-amd64.tar.gz"
+      sha256 "f6473b82d5fd50781fd1d468dbbc35622e35bcd81569b8f9d28cef67fd95a6dd"
+    end
+    if Hardware::CPU.arm?
+      url "https://github.com/pomerium/pomerium/releases/download/v0.15.7/pomerium-cli-darwin-arm64.tar.gz"
+      sha256 "560440570c8fd3e87e2c6e88b1978ab46fbda80d24441b29460593e22c66ea5f"
     end
   end
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/pomerium/pomerium/releases/download/v0.15.6/pomerium-cli-linux-amd64.tar.gz"
-      sha256 "d09f388686fb0402326151713ed0e1570f79601f1a22c9e7f188b83c873ec234"
+      url "https://github.com/pomerium/pomerium/releases/download/v0.15.7/pomerium-cli-linux-amd64.tar.gz"
+      sha256 "1650c7074b5272c1c3ee38cdfe161ce60b61679d06b564183fb372383b316ca1"
     end
     if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/pomerium/pomerium/releases/download/v0.15.6/pomerium-cli-linux-armv6.tar.gz"
-      sha256 "d8a7b542f45517fd5065432ad39e50ff5b2e35bc454c366f381b3e0f1ba4ef04"
+      url "https://github.com/pomerium/pomerium/releases/download/v0.15.7/pomerium-cli-linux-armv6.tar.gz"
+      sha256 "c1d35cd7b6f4d70a781056f1aa2b1790add6f89276eab531b4721731c44aa5b2"
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/pomerium/pomerium/releases/download/v0.15.6/pomerium-cli-linux-arm64.tar.gz"
-      sha256 "efed67b9b4487b121780d32cbd2e2f7415aa7acad717d657dd857ac629c45105"
+      url "https://github.com/pomerium/pomerium/releases/download/v0.15.7/pomerium-cli-linux-arm64.tar.gz"
+      sha256 "380f6df9f925fc56c21a64cdfc7fe2a3a5c460c2aa056631f25414d74c94e88b"
     end
   end
 
