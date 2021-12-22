@@ -5,20 +5,20 @@
 class PomeriumCli < Formula
   desc ""
   homepage ""
-  version "0.0.0-rc2"
+  version "0.16.0"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/pomerium/cli/releases/download/v0.0.0-rc2/pomerium-cli-darwin-arm64.tar.gz"
-      sha256 "e153326c9833fae0965a147255c3cd8ee7758544533f7695e40d79997bca2bea"
+      url "https://github.com/pomerium/cli/releases/download/v0.16.0/pomerium-cli-darwin-arm64.tar.gz"
+      sha256 "07a7fdcfa411bbc8df2665a7bba521302c292941d7a4cc6a3825214559c8eb2d"
 
       def install
         bin.install "pomerium-cli"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/pomerium/cli/releases/download/v0.0.0-rc2/pomerium-cli-darwin-amd64.tar.gz"
-      sha256 "ac331f71041387cd55849e9fe777e55b5410ac9819f4ee132126ac24a11458e2"
+      url "https://github.com/pomerium/cli/releases/download/v0.16.0/pomerium-cli-darwin-amd64.tar.gz"
+      sha256 "97cc5ee2e705796e5b0184c097645e4c096031da9718de070a840327e9853714"
 
       def install
         bin.install "pomerium-cli"
@@ -27,25 +27,25 @@ class PomeriumCli < Formula
   end
 
   on_linux do
+    if Hardware::CPU.intel?
+      url "https://github.com/pomerium/cli/releases/download/v0.16.0/pomerium-cli-linux-amd64.tar.gz"
+      sha256 "648c2d96333224aa08f5019056f205bf138dd5705fb1049357f43f4e4b4adcf4"
+
+      def install
+        bin.install "pomerium-cli"
+      end
+    end
     if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/pomerium/cli/releases/download/v0.0.0-rc2/pomerium-cli-linux-armv6.tar.gz"
-      sha256 "7b77b17e12b3042c78048af7b447e07e2387a8b100976c391eea9639d022b75b"
+      url "https://github.com/pomerium/cli/releases/download/v0.16.0/pomerium-cli-linux-armv6.tar.gz"
+      sha256 "7e4d739bfa8ed723ca9aa71ae5c4beabef7ca90b576b2984191dd2a430a0b266"
 
       def install
         bin.install "pomerium-cli"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/pomerium/cli/releases/download/v0.0.0-rc2/pomerium-cli-linux-arm64.tar.gz"
-      sha256 "4fcec21c960ea225515c553ed67f59057bc77f0701c0d033c7b10332cae7baa6"
-
-      def install
-        bin.install "pomerium-cli"
-      end
-    end
-    if Hardware::CPU.intel?
-      url "https://github.com/pomerium/cli/releases/download/v0.0.0-rc2/pomerium-cli-linux-amd64.tar.gz"
-      sha256 "929f20e927824115aeed954dee88742546218ed2aa58a50c91727f7341ca94de"
+      url "https://github.com/pomerium/cli/releases/download/v0.16.0/pomerium-cli-linux-arm64.tar.gz"
+      sha256 "6cc9bd42f376d9d721b09357d4bceca0852fbda3acd13e826fdf40aed4713f91"
 
       def install
         bin.install "pomerium-cli"
