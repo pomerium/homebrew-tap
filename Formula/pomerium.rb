@@ -5,12 +5,12 @@
 class Pomerium < Formula
   desc ""
   homepage ""
-  version "0.16.4"
+  version "0.17.0"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/pomerium/pomerium/releases/download/v0.16.4/pomerium-darwin-amd64.tar.gz"
-      sha256 "a001a4ac5eb2032cce4a3c10dcd37f24ef591b8a1846cb67ec71fe7eb3c9041e"
+      url "https://github.com/pomerium/pomerium/releases/download/v0.17.0/pomerium-darwin-amd64.tar.gz"
+      sha256 "3417bf7b6d5f7b856469b60926b235cdf9adace48af3a8096c0359ec1dc7e5f5"
 
       def install
         bin.install "pomerium"
@@ -20,16 +20,16 @@ class Pomerium < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/pomerium/pomerium/releases/download/v0.16.4/pomerium-linux-arm64.tar.gz"
-      sha256 "0377c9843d595f34d1358e9ef8758533a28e9e408d404fc5fa7e1401699e0e29"
+      url "https://github.com/pomerium/pomerium/releases/download/v0.17.0/pomerium-linux-arm64.tar.gz"
+      sha256 "ecc483c9132f2ae4146bf650916f9b379ce579095f3e520cb1bc9b30f669cd3d"
 
       def install
         bin.install "pomerium"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/pomerium/pomerium/releases/download/v0.16.4/pomerium-linux-amd64.tar.gz"
-      sha256 "5282e3f86637d4dd69238159de127bdc9ccc5ae8384f1d53bbd800144225bb68"
+      url "https://github.com/pomerium/pomerium/releases/download/v0.17.0/pomerium-linux-amd64.tar.gz"
+      sha256 "e509e78bd2dc0f632504d760cb563e8755953583bf40ec0d2d30200f272ac125"
 
       def install
         bin.install "pomerium"
