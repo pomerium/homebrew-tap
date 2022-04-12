@@ -1,0 +1,31 @@
+#!/usr/bin/env bash
+set -euxo pipefail
+
+_version=${VERSION?'VERSION is required'}
+
+_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" &>/dev/null && pwd)"
+_amd64url="https://github.com/pomerium/desktop-client/releases/download/v${_version}/Pomerium-Desktop-${_version}.dmg"
+_arm64url="https://github.com/pomerium/desktop-client/releases/download/v${_version}/Pomerium-Desktop-${_version}-arm64.dmg"
+
+_amd64sha256="$(curl -L "$_amd64url" | sha256sum | cut -d' ' -f1)"
+_arm64sha256="$(curl -L "$_arm64url" | sha256sum | cut -d' ' -f1)"
+
+mkdir -p Casks
+cat <<EOF >./Casks/pomerium-desktop.rb
+cask "pomerium-desktop" do
+  name "Pomerium Desktop"
+  homepage "https://www.pomerium.com"
+  desc ""
+  version "$_version"
+
+  app "Pomerium Desktop.app"
+
+  if Hardware::CPU.intel?
+    sha256 "$_amd64sha256"
+    url "$_amd64url"
+  else
+    sha256 "$_arm64sha256"
+    url "$_arm64url"
+  end
+end
+EOF
