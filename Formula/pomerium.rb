@@ -8,13 +8,21 @@ class Pomerium < Formula
   version "0.17.3"
 
   on_macos do
-    if Hardware::CPU.intel?
+    if Hardware::CPU.arm?
       url "https://github.com/pomerium/pomerium/releases/download/v0.17.3/pomerium-darwin-amd64.tar.gz"
       sha256 "90847de4e0287738244badc66a4072e48800b312a7b90ad9ebb37b8f48fd1ece"
 
       def install
         bin.install "pomerium"
       end
+    end
+    if Hardware::CPU.intel?
+      url "https://github.com/pomerium/pomerium/releases/download/v0.17.3/pomerium-darwin-amd64.tar.gz"
+      sha256 "90847de4e0287738244badc66a4072e48800b312a7b90ad9ebb37b8f48fd1ece"
+
+        def install
+          bin.install "pomerium"
+        end
     end
   end
 
