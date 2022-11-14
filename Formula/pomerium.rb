@@ -5,20 +5,20 @@
 class Pomerium < Formula
   desc ""
   homepage ""
-  version "0.19.1"
+  version "0.20.0"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/pomerium/pomerium/releases/download/v0.19.1/pomerium-darwin-arm64.tar.gz"
-      sha256 "0ff609371d1293165acd9d1372152aad99008c7497e8e797ec727c4100874b7f"
+      url "https://github.com/pomerium/pomerium/releases/download/v0.20.0/pomerium-darwin-arm64.tar.gz"
+      sha256 "0139db3a6ea7ee055b18f71f962f1426d2611a74da79685f221d7b3856e9aee4"
 
       def install
         bin.install "pomerium"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/pomerium/pomerium/releases/download/v0.19.1/pomerium-darwin-amd64.tar.gz"
-      sha256 "98acf18b633d85040beb1ea9134db4048620df4a2eb24f81ebd8ed1d41c384e2"
+      url "https://github.com/pomerium/pomerium/releases/download/v0.20.0/pomerium-darwin-amd64.tar.gz"
+      sha256 "623ce5813038c1e80bbf674c477f4e72469e3372db2406bbf189cf48c642f510"
 
       def install
         bin.install "pomerium"
@@ -28,16 +28,16 @@ class Pomerium < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/pomerium/pomerium/releases/download/v0.19.1/pomerium-linux-arm64.tar.gz"
-      sha256 "08318b6f33fca37908ce211c35511215d20089b9a8cd2b16b14a8f74d845be59"
+      url "https://github.com/pomerium/pomerium/releases/download/v0.20.0/pomerium-linux-arm64.tar.gz"
+      sha256 "ec9f16dac43e04c32661b91f05dd749129897cbae42f768454200c57dd01bd75"
 
       def install
         bin.install "pomerium"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/pomerium/pomerium/releases/download/v0.19.1/pomerium-linux-amd64.tar.gz"
-      sha256 "680c0f01b3e6fc419aea293b842db0ca0883638ad783df5e037a0abfbe253654"
+      url "https://github.com/pomerium/pomerium/releases/download/v0.20.0/pomerium-linux-amd64.tar.gz"
+      sha256 "a5c7fb27b2c9f315ab14f392258defb2795542a6c8c3f1d47e97821244158d15"
 
       def install
         bin.install "pomerium"
