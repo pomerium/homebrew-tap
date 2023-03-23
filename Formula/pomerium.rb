@@ -5,20 +5,20 @@
 class Pomerium < Formula
   desc ""
   homepage ""
-  version "0.21.2"
+  version "0.21.3"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/pomerium/pomerium/releases/download/v0.21.2/pomerium-darwin-arm64.tar.gz"
-      sha256 "31dbb15f3ceaabc9618302857aef47be52bd8245628738450f3b1507ef2767c6"
+      url "https://github.com/pomerium/pomerium/releases/download/v0.21.3/pomerium-darwin-arm64.tar.gz"
+      sha256 "38d195fe08da07e62961281ccb275f54d4f713dd17ae89a62b017d51adcf8bbb"
 
       def install
         bin.install "pomerium"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/pomerium/pomerium/releases/download/v0.21.2/pomerium-darwin-amd64.tar.gz"
-      sha256 "78497920ec3bbfdc5e0c98e2e2c301ae554493a3e320635edc2de11420142321"
+      url "https://github.com/pomerium/pomerium/releases/download/v0.21.3/pomerium-darwin-amd64.tar.gz"
+      sha256 "a58c3a0f1ae2c670a6cdd0b56fc249697a9928153584e52f0154c940b528e437"
 
       def install
         bin.install "pomerium"
@@ -27,17 +27,17 @@ class Pomerium < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/pomerium/pomerium/releases/download/v0.21.2/pomerium-linux-amd64.tar.gz"
-      sha256 "84648806f2225fb185123bf576af369c5e6f15930e2dad24aac0e501df5a3528"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/pomerium/pomerium/releases/download/v0.21.3/pomerium-linux-arm64.tar.gz"
+      sha256 "723e3c4b4680d4efce651a938ece8b3a7a4d192f833e429aa683d6d4a14bf4cb"
 
       def install
         bin.install "pomerium"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/pomerium/pomerium/releases/download/v0.21.2/pomerium-linux-arm64.tar.gz"
-      sha256 "d9b2aa5672336dae8dfb0ea36e2ab22591cfd678edb027f0a8e4db7644559215"
+    if Hardware::CPU.intel?
+      url "https://github.com/pomerium/pomerium/releases/download/v0.21.3/pomerium-linux-amd64.tar.gz"
+      sha256 "df0d27409514dd410533ec0a8ba5794e7398d184a0b38dd4d7dffce0b037429d"
 
       def install
         bin.install "pomerium"
