@@ -6,7 +6,25 @@ class PomeriumCli < Formula
   desc ""
   homepage ""
   version "0.29.1"
-  depends_on :linux
+
+  on_macos do
+    if Hardware::CPU.intel?
+      url "https://github.com/pomerium/cli/releases/download/v0.29.1/pomerium-cli-darwin-amd64.tar.gz"
+      sha256 "339c6a96f1809585ee815bb38629dec4541498c1a4771e05fa1f0a5309f7004b"
+
+      def install
+        bin.install "pomerium-cli"
+      end
+    end
+    if Hardware::CPU.arm?
+      url "https://github.com/pomerium/cli/releases/download/v0.29.1/pomerium-cli-darwin-arm64.tar.gz"
+      sha256 "2dc649544b2f4a96fbcf2f60015bb40d554b601d174c90395d39a2117f831386"
+
+      def install
+        bin.install "pomerium-cli"
+      end
+    end
+  end
 
   on_linux do
     if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
