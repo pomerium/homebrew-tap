@@ -1,3 +1,4 @@
+name: Update pomerium-desktop
 on:
   repository_dispatch:
     types: [desktop-client-release]
@@ -7,7 +8,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          token: ${{ secrets.APPARITOR_GITHUB_TOKEN }}
       - run: ./scripts/desktop-client-release
         env:
           VERSION: ${{ github.event.client_payload.version }}
       - uses: stefanzweifel/git-auto-commit-action@8621497c8c39c72f3e2a999a26b4ca1b5058a842
+        with:
+          commit_message: "update pomerium-desktop cask for version v${{ github.event.client_payload.version }}"
