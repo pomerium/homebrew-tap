@@ -12,6 +12,14 @@ class Pomerium < Formula
         bin.install "pomerium"
       end
     end
+    if Hardware::CPU.arm?
+      url "https://github.com/pomerium/pomerium/releases/download/v0.30.0/pomerium-darwin-arm64.tar.gz"
+      sha256 "fa72f89d1340093465fd1d60a9cf6fa96a021c1b9d07c28d028021faaed9a977"
+
+      def install
+        bin.install "pomerium"
+      end
+    end
   end
 
   on_linux do

@@ -5,10 +5,12 @@ _version=${VERSION?'VERSION is required'}
 
 _dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" &>/dev/null && pwd)"
 _darwin_amd64_url="https://github.com/pomerium/pomerium/releases/download/v${_version}/pomerium-darwin-amd64.tar.gz"
+_darwin_arm64_url="https://github.com/pomerium/pomerium/releases/download/v${_version}/pomerium-darwin-arm64.tar.gz"
 _linux_arm64_url="https://github.com/pomerium/pomerium/releases/download/v${_version}/pomerium-linux-arm64.tar.gz"
 _linux_amd64_url="https://github.com/pomerium/pomerium/releases/download/v${_version}/pomerium-linux-amd64.tar.gz"
 
 _darwin_amd64_sha256="$(curl -fL "$_darwin_amd64_url" | shasum -a 256 | cut -d' ' -f1)"
+_darwin_arm64_sha256="$(curl -fL "$_darwin_arm64_url" | shasum -a 256 | cut -d' ' -f1)"
 _linux_arm64_sha256="$(curl -fL "$_linux_arm64_url" | shasum -a 256 | cut -d' ' -f1)"
 _linux_amd64_sha256="$(curl -fL "$_linux_amd64_url" | shasum -a 256 | cut -d' ' -f1)"
 
@@ -22,6 +24,14 @@ class Pomerium < Formula
     if Hardware::CPU.intel?
       url "$_darwin_amd64_url"
       sha256 "$_darwin_amd64_sha256"
+
+      def install
+        bin.install "pomerium"
+      end
+    end
+    if Hardware::CPU.arm?
+      url "$_darwin_arm64_url"
+      sha256 "$_darwin_arm64_sha256"
 
       def install
         bin.install "pomerium"
