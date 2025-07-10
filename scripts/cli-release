@@ -4,8 +4,8 @@ set -euxo pipefail
 _version=${VERSION?'VERSION is required'}
 
 _dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" &>/dev/null && pwd)"
-_darwin_amd64_url="https://github.com/pomerium/cli/releases/download/v${_version}/pomerium-cli-darwin-amd64.tar.gz"
-_darwin_arm64_url="https://github.com/pomerium/cli/releases/download/v${_version}/pomerium-cli-darwin-arm64.tar.gz"
+_darwin_amd64_url="https://github.com/pomerium/cli/releases/download/v${_version}/pomerium-cli-darwin-amd64.zip"
+_darwin_arm64_url="https://github.com/pomerium/cli/releases/download/v${_version}/pomerium-cli-darwin-arm64.zip"
 _linux_armv6_url="https://github.com/pomerium/cli/releases/download/v${_version}/pomerium-cli-linux-armv6.tar.gz"
 _linux_arm64_url="https://github.com/pomerium/cli/releases/download/v${_version}/pomerium-cli-linux-arm64.tar.gz"
 _linux_amd64_url="https://github.com/pomerium/cli/releases/download/v${_version}/pomerium-cli-linux-amd64.tar.gz"
