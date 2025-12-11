@@ -1,20 +1,20 @@
 class Pomerium < Formula
   desc ""
   homepage "https://www.pomerium.com"
-  version "0.30.8"
+  version "0.31.3"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/pomerium/pomerium/releases/download/v0.30.8/pomerium-darwin-amd64.tar.gz"
-      sha256 "23a6fe5bbbd9841f15d42c15e849d872830d776eb40c0cfa25507f56c2bb78ce"
+      url "https://github.com/pomerium/pomerium/releases/download/v0.31.3/pomerium-darwin-amd64.tar.gz"
+      sha256 "548ce662363d04a22a1b2b98be56771cbab31a12b158c5c80759be5bfe9bdc41"
 
       def install
         bin.install "pomerium"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/pomerium/pomerium/releases/download/v0.30.8/pomerium-darwin-arm64.tar.gz"
-      sha256 "e0e85acd20feadf6f608a2e346faee8aadb8e4103e686615c7e41ebda54a029e"
+      url "https://github.com/pomerium/pomerium/releases/download/v0.31.3/pomerium-darwin-arm64.tar.gz"
+      sha256 "85ef07f728341c6926c20ca4474cab49214d0e73de0e143d8341c859f2e6535d"
 
       def install
         bin.install "pomerium"
@@ -24,16 +24,16 @@ class Pomerium < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/pomerium/pomerium/releases/download/v0.30.8/pomerium-linux-arm64.tar.gz"
-      sha256 "78e6307a8e16539abdbdc925e4633dc6acdfe315391288524dc9ef5344b07671"
+      url "https://github.com/pomerium/pomerium/releases/download/v0.31.3/pomerium-linux-arm64.tar.gz"
+      sha256 "2d3f36de2cf727600afb8b68eac727fb5c8bab25c1ee83c9cbbc540f9457340a"
 
       def install
         bin.install "pomerium"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/pomerium/pomerium/releases/download/v0.30.8/pomerium-linux-amd64.tar.gz"
-      sha256 "4e5f283afe9655a2e52e2472376578ae2fd7ad30bc5ca106f8897ceab78ed7ba"
+      url "https://github.com/pomerium/pomerium/releases/download/v0.31.3/pomerium-linux-amd64.tar.gz"
+      sha256 "a9745669397fdb2e5a4db58c08dc511acb607d269747d04fbc6995bf6b59583f"
 
       def install
         bin.install "pomerium"
