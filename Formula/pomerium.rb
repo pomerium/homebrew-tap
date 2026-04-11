@@ -40,4 +40,12 @@ class Pomerium < Formula
       end
     end
   end
+
+  service do
+    run [opt_bin/"pomerium", "--config", etc/"pomerium.yaml"]
+    keep_alive true
+    working_dir HOMEBREW_PREFIX
+    log_path var/"log/pomerium.log"
+    error_log_path var/"log/pomerium.err.log"
+  end
 end
