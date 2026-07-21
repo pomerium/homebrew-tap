@@ -2,15 +2,15 @@ cask "pomerium-desktop" do
   name "Pomerium Desktop"
   homepage "https://www.pomerium.com"
   desc ""
-  version "0.32.1"
+  version "0.33.0"
 
   app "Pomerium Desktop.app"
 
   if Hardware::CPU.intel?
-    sha256 "f7e48ce05efc717617ae8952b739c8f85c8b73a8be20023ffb8661806eadb2bf"
-    url "https://github.com/pomerium/desktop-client/releases/download/v0.32.1/Pomerium-Desktop-0.32.1.dmg"
+    sha256 "e81f83d0f115b9594821455c7b842d98b84d592dfe92d4f88a3114c9b8f2bf63"
+    url "https://github.com/pomerium/desktop-client/releases/download/v0.33.0/Pomerium-Desktop-0.33.0.dmg"
   else
-    sha256 "5ceee1639a246d84407af94b183e118969c56ca59947d8027fb5d958b05c6c3d"
-    url "https://github.com/pomerium/desktop-client/releases/download/v0.32.1/Pomerium-Desktop-0.32.1-arm64.dmg"
+    sha256 "136b259d02598a9a6b6f6b4182e16ab4cb77d42e31e8900ca4bd236f53c18f94"
+    url "https://github.com/pomerium/desktop-client/releases/download/v0.33.0/Pomerium-Desktop-0.33.0-arm64.dmg"
   end
 end
