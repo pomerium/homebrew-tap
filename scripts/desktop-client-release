@@ -2,6 +2,7 @@
 set -euxo pipefail
 
 _version=${VERSION?'VERSION is required'}
+[[ "v$_version" == "$(gh api repos/pomerium/desktop-client/releases/latest --jq .tag_name)" ]]
 
 _dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" &>/dev/null && pwd)"
 _arm64url="https://github.com/pomerium/desktop-client/releases/download/v${_version}/Pomerium-Desktop-${_version}-arm64.dmg"
