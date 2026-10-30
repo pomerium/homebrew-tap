@@ -2,6 +2,7 @@
 set -euxo pipefail
 
 _version=${VERSION?'VERSION is required'}
+[[ "v$_version" == "$(gh api repos/pomerium/pomerium/releases/latest --jq .tag_name)" ]]
 
 _dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" &>/dev/null && pwd)"
 _darwin_arm64_url="https://github.com/pomerium/pomerium/releases/download/v${_version}/pomerium-darwin-arm64.tar.gz"
@@ -46,6 +47,14 @@ class Pomerium < Formula
         bin.install "pomerium"
       end
     end
+  end
+
+  service do
+    run [opt_bin/"pomerium", "--config", etc/"pomerium.yaml"]
+    keep_alive true
+    working_dir HOMEBREW_PREFIX
+    log_path var/"log/pomerium.log"
+    error_log_path var/"log/pomerium.err.log"
   end
 end
 EOF
