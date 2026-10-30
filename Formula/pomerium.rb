@@ -2,6 +2,7 @@ class Pomerium < Formula
   desc ""
   homepage "https://www.pomerium.com"
   version "0.33.4"
+  license :cannot_represent
 
   on_macos do
     depends_on arch: :arm64
