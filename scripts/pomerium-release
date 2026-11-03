@@ -15,38 +15,31 @@ _linux_amd64_sha256="$(curl -fL "$_linux_amd64_url" | shasum -a 256 | cut -d' ' 
 
 cat <<EOF > "${_dir}/../Formula/pomerium.rb"
 class Pomerium < Formula
-  desc ""
+  desc "Identity Aware Proxy"
   homepage "https://www.pomerium.com"
   version "$_version"
+  license :cannot_represent
 
   on_macos do
     depends_on arch: :arm64
 
     url "$_darwin_arm64_url"
     sha256 "$_darwin_arm64_sha256"
-
-    def install
-      bin.install "pomerium"
-    end
   end
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
       url "$_linux_arm64_url"
       sha256 "$_linux_arm64_sha256"
-
-      def install
-        bin.install "pomerium"
-      end
     end
     if Hardware::CPU.intel?
       url "$_linux_amd64_url"
       sha256 "$_linux_amd64_sha256"
-
-      def install
-        bin.install "pomerium"
-      end
     end
+  end
+
+  def install
+    bin.install "pomerium"
   end
 end
 EOF
